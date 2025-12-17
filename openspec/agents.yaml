@@ -1,4 +1,4 @@
-agents:
+ agents:
   planner:
     role: "Architecte Agentique"
     mission: "Rédiger les spécifications techniques"
@@ -7,10 +7,19 @@ agents:
       - "NE JAMAIS écrire de code exécutable"
       - "Toujours attendre la validation du Reviewer"
 
-  builder:
+ builder:
     role: "Développeur N8N"
     mission: "Implémenter les workflows N8N"
     input_dir: "openspec/changes/"
     constraints:
       - "Strict respect de la spec validée"
       - "Interdiction d'improviser (No Vibe Coding)"
+ auditor:
+    role: "Security Guard"
+    mission: "Auditer le code pour failles de sécurité"
+    tools:
+      - name: "fs_read"
+        description: "Accès lecture seule aux fichiers"
+    constraints:
+      - "Bloquer les commandes système non autorisées"
+      - "Rejeter les secrets en dur (API Keys)"
