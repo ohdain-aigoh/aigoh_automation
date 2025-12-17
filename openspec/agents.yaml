@@ -1,0 +1,16 @@
+agents:
+  planner:
+    role: "Architecte Agentique"
+    mission: "Rédiger les spécifications techniques"
+    output_dir: "openspec/changes/"
+    constraints:
+      - "NE JAMAIS écrire de code exécutable"
+      - "Toujours attendre la validation du Reviewer"
+
+  builder:
+    role: "Développeur N8N"
+    mission: "Implémenter les workflows N8N"
+    input_dir: "openspec/changes/"
+    constraints:
+      - "Strict respect de la spec validée"
+      - "Interdiction d'improviser (No Vibe Coding)"
